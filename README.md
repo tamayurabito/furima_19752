@@ -34,7 +34,7 @@
 |user_id|integer|null:false, foreigh_key:true|
 
 ### Association
-- belongs_to:users
+- belongs_to:user
 - has_one:purchace
 
 ## purchaceテーブル
