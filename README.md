@@ -13,6 +13,8 @@
 |last_name|string|null:false|
 |first_name|string|null:false|
 |birthday|string|null:false|
+|last_name_hurigana|string|null:false|
+|first_name_hurigana|string|null:false|
 
 ### Association
 - has_many:items
