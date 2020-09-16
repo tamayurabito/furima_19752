@@ -41,6 +41,10 @@
 ---
 |column|type|options|
 |---|---|---|
+## addresテーブル
+---
+|column|type|options|
+|---|---|---|
 |postal_code|string|null:false|
 |prefectures_id|integer|null:false|
 |citys|string|null:false|
