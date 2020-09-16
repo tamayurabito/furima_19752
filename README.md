@@ -24,7 +24,6 @@
 ---
 |column|type|options|
 |---|---|---|
-|image|string|null:false|
 |item_name|string|null:false|
 |item_explanation|text|null:false|
 |item_status|string|null:false|
