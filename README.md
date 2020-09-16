@@ -18,7 +18,7 @@
 
 ### Association
 - has_many:items
-- has_many:purchace
+- has_many:purchaces
 
 ## itemsテーブル
 ---
