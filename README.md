@@ -41,6 +41,14 @@
 ---
 |column|type|options|
 |---|---|---|
+|user_id|integer|null:false, foreign_key:true|
+|item_id|integer|null:false, foreign_key:ture|
+
+### Association
+- belongs_to:user
+- belongs_to:item
+- has_one:addres
+
 ## addresテーブル
 ---
 |column|type|options|
@@ -55,8 +63,7 @@
 |item_id|integer|null:false, foreign_key:ture|
 
 ### Association
-- belongs_to:users
-- belongs_to: items
+- belongs_to:purchace
 
 
 
