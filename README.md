@@ -48,7 +48,7 @@
 |prefectures|string|null:false|
 |citys|string|null:false|
 |address|string|null:false|
-|building_name|string|null:false|
+|building_name|string||
 |phone_number|string|null:false|
 |user_id|integer|null:false, foreign_key:true|
 |item_id|integer|null:false, foreign_key:ture|
