@@ -7,7 +7,7 @@
 ---
 |column|type|options|
 |---|---|---|
-|nick_name|string|null:false|
+|nickname|string|null:false|
 |mail|string|null:false, unique:true|
 |password|string|null:false|
 |last_name|string|null:false|
