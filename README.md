@@ -41,9 +41,6 @@
 ---
 |column|type|options|
 |---|---|---|
-|card_number|integer|null:false|
-|effective_date|string|null:false|
-|security_code|integer|null:false|
 |postal_code|string|null:false|
 |prefectures|string|null:false|
 |citys|string|null:false|
