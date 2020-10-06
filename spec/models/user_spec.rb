@@ -21,8 +21,8 @@ describe User do
     end
 
     it 'emailが重複している場合は登録できないこと' do
-      user = create(:user)
-      another_user = build(:user, email: user.email)
+      @user.save
+      another_user = build(:user, email: @user.email)
       another_user.valid?
       expect(another_user.errors[:email]).to include('has already been taken')
     end
