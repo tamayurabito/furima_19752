@@ -73,10 +73,22 @@ describe User do
       expect(@user.errors[:password_confirmation]).to include("doesn't match Password")
     end
 
+    it 'first_nameが無い場合は登録できないこと' do
+      @user.first_name = nil
+      @user.valid?
+      expect(@user.errors[:first_name]).to include("can't be blank")
+    end
+
     it 'first_nameに半角が含まれる場合は登録できないこと' do
       @user.first_name = 'あa'
       @user.valid?
       expect(@user.errors[:first_name]).to include('is invalid')
+    end
+
+    it 'last_nameが無い場合は登録できないこと' do
+      @user.last_name = nil
+      @user.valid?
+      expect(@user.errors[:last_name]).to include("can't be blank")
     end
 
     it 'last_nameに半角が含まれる場合は登録できないこと' do
@@ -85,10 +97,22 @@ describe User do
       expect(@user.errors[:last_name]).to include('is invalid')
     end
 
+    it 'first_name_huriganaが無い場合は登録できないこと' do
+      @user.first_name_hurigana = nil
+      @user.valid?
+      expect(@user.errors[:first_name_hurigana]).to include("can't be blank")
+    end
+
     it 'first_name_huriganaにカタカナ以外が含まれる場合は登録できないこと' do
       @user.first_name_hurigana = 'ヤマダやまだ'
       @user.valid?
       expect(@user.errors[:first_name_hurigana]).to include('is invalid')
+    end
+
+    it 'last_name_huriganaが無い場合は登録できないこと' do
+      @user.last_name_hurigana = nil
+      @user.valid?
+      expect(@user.errors[:last_name_hurigana]).to include("can't be blank")
     end
 
     it 'last_name_huriganaにカタカナ以外が含まれる場合は登録できないこと' do
