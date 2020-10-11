@@ -26,6 +26,7 @@
 |---|---|---|
 |item_name|string|null:false|
 |item_explanation|text|null:false|
+|item_category_id|integer|null:false|
 |item_status_id|integer|null:false|
 |delivery_charge_id|integer|null:false|
 |delivery_area_id|integer|null:false|
