@@ -6,6 +6,7 @@
 require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
+require("../item")
 require("jquery")
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -14,3 +15,7 @@ require("jquery")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+//= require jquery
+//= require rails-ujs 
+//= require_tree .
