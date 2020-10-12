@@ -67,14 +67,13 @@ describe Item do
     it '価格が¥300未満の場合は登録ができない事' do
       @item.price = '299'
       @item.valid?
-      expect(@item.errors[:price]).to include("is not included in the list")
+      expect(@item.errors[:price]).to include('is not included in the list')
     end
-    
+
     it '価格が¥9,999,999より大きい場合は登録ができない事' do
       @item.price = '10000000'
       @item.valid?
-      expect(@item.errors[:price]).to include("is not included in the list")
+      expect(@item.errors[:price]).to include('is not included in the list')
     end
-
   end
 end
