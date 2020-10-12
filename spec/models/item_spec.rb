@@ -35,7 +35,7 @@ describe Item do
     end
 
     it 'カテゴリー情報が1の場合は登録ができない事' do
-      @item.item_category_id = "1"
+      @item.item_category_id = 1
       @item.valid?
       expect(@item.errors[:item_category_id]).to include("must be other than 1")
     end
@@ -47,7 +47,7 @@ describe Item do
     end
 
     it '商品の状態についての情報が1の場合は登録ができない事' do
-      @item.item_status_id = "1"
+      @item.item_status_id = 1
       @item.valid?
       expect(@item.errors[:item_status_id]).to include("must be other than 1")
     end
@@ -59,7 +59,7 @@ describe Item do
     end
 
     it '配送料の負担についての情報が1の場合は登録ができない事' do
-      @item.delivery_charge_id = '1'
+      @item.delivery_charge_id = 1
       @item.valid?
       expect(@item.errors[:delivery_charge_id]).to include('must be other than 1')
     end
@@ -71,7 +71,7 @@ describe Item do
     end
 
     it '発送元の地域についての情報が1の場合は登録ができない事' do
-      @item.delivery_area_id = '1'
+      @item.delivery_area_id = 1
       @item.valid?
       expect(@item.errors[:delivery_area_id]).to include('must be other than 1')
     end
@@ -84,7 +84,7 @@ describe Item do
     end
 
     it '発送までの日数についての情報が1の場合は登録ができない事' do
-      @item.delivery_days_id = '1'
+      @item.delivery_days_id = 1
       @item.valid?
       expect(@item.errors[:delivery_days_id]).to include('must be other than 1')
     end
@@ -96,13 +96,13 @@ describe Item do
     end
 
     it '価格が¥300未満の場合は登録ができない事' do
-      @item.price = '299'
+      @item.price = 299
       @item.valid?
       expect(@item.errors[:price]).to include('is not included in the list')
     end
 
     it '価格が¥9,999,999より大きい場合は登録ができない事' do
-      @item.price = '10000000'
+      @item.price = 10000000
       @item.valid?
       expect(@item.errors[:price]).to include('is not included in the list')
     end
