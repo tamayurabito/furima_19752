@@ -34,10 +34,22 @@ describe Item do
       expect(@item.errors[:item_category_id]).to include("can't be blank")
     end
 
+    it 'カテゴリー情報が1の場合は登録ができない事' do
+      @item.item_category_id = "1"
+      @item.valid?
+      expect(@item.errors[:item_category_id]).to include("must be other than 1")
+    end
+
     it '商品の状態についての情報が無い場合は登録ができない事' do
       @item.item_status_id = nil
       @item.valid?
       expect(@item.errors[:item_status_id]).to include("can't be blank")
+    end
+
+    it '商品の状態についての情報が1の場合は登録ができない事' do
+      @item.item_status_id = "1"
+      @item.valid?
+      expect(@item.errors[:item_status_id]).to include("must be other than 1")
     end
 
     it '配送料の負担についての情報が無い場合は登録ができない事' do
@@ -46,16 +58,35 @@ describe Item do
       expect(@item.errors[:delivery_charge_id]).to include("can't be blank")
     end
 
+    it '配送料の負担についての情報が1の場合は登録ができない事' do
+      @item.delivery_charge_id = '1'
+      @item.valid?
+      expect(@item.errors[:delivery_charge_id]).to include('must be other than 1')
+    end
+
     it '発送元の地域についての情報が無い場合は登録ができない事' do
       @item.delivery_area_id = nil
       @item.valid?
       expect(@item.errors[:delivery_area_id]).to include("can't be blank")
     end
 
+    it '発送元の地域についての情報が1の場合は登録ができない事' do
+      @item.delivery_area_id = '1'
+      @item.valid?
+      expect(@item.errors[:delivery_area_id]).to include('must be other than 1')
+    end
+
+
     it '発送までの日数についての情報が無い場合は登録ができない事' do
       @item.delivery_days_id = nil
       @item.valid?
       expect(@item.errors[:delivery_days_id]).to include("can't be blank")
+    end
+
+    it '発送までの日数についての情報が1の場合は登録ができない事' do
+      @item.delivery_days_id = '1'
+      @item.valid?
+      expect(@item.errors[:delivery_days_id]).to include('must be other than 1')
     end
 
     it '価格についての情報が無い場合は登録ができない事' do
