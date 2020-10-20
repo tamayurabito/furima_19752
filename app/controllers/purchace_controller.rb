@@ -1,6 +1,8 @@
 class PurchaceController < ApplicationController
   before_action :set_item, only: [:index, :create]
   before_action :move_to_login, only: [:index]
+  before_action :move_to_top, only: [:index]
+
   def index
   end
 
@@ -15,6 +17,7 @@ class PurchaceController < ApplicationController
       render 'index'
     end
   end
+  
   private
   
   def purchace_params
@@ -37,5 +40,10 @@ class PurchaceController < ApplicationController
   def move_to_login
     redirect_to new_user_session_path unless user_signed_in?
   end
+
+  def move_to_top
+    redirect_to controller: :items, action: :index if @item.user_id == current_user.id
+  end
+
 
 end
