@@ -46,6 +46,6 @@ class PurchaceController < ApplicationController
   end
 
   def move_to_top_already_purchased
-    redirect_to controller: :items, action: :index if Purchace.find_by(item_id: @item.id)
+    redirect_to controller: :items, action: :index if @item.purchace.present?
   end
 end
