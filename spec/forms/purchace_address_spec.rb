@@ -9,6 +9,12 @@ describe PurchaceAddress do
       expect(@purchaceaddress).to be_valid
     end
 
+    it 'クレジットカード情報が必須であり、正しいクレジットカードの情報でない時は決済できない事' do
+      @purchaceaddress.token = nil
+      @purchaceaddress.valid?
+      expect(@purchaceaddress.errors[:token]).to include("can't be blank")
+    end
+
     it '郵便番号がない場合は登録ができない事' do
       @purchaceaddress.postal_code = nil
       @purchaceaddress.valid?

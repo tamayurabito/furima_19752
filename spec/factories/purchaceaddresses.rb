@@ -2,6 +2,7 @@ FactoryBot.define do
   factory :purchace_address do
     # association :user
     # association :item
+    token                 { 'a' }
     postal_code           { '123-4567' }
     delivery_area_id      { 2 }
     citys                 { '横浜市緑区' }
