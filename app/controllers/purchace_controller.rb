@@ -1,4 +1,5 @@
 class PurchaceController < ApplicationController
+  before_action :set_item, only: [:index, :create]
   def index
   end
 
@@ -26,6 +27,10 @@ class PurchaceController < ApplicationController
       card: purchace_params[:token],    # カードトークン
       currency:'jpy'                 # 通貨の種類(日本円)
     )
+  end
+
+  def set_item
+    @item = Item.find(params[:item_id])
   end
 
 end
