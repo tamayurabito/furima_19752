@@ -1,5 +1,6 @@
 class PurchaceController < ApplicationController
   before_action :set_item, only: [:index, :create]
+  before_action :move_to_login, only: [:index]
   def index
   end
 
@@ -31,6 +32,10 @@ class PurchaceController < ApplicationController
 
   def set_item
     @item = Item.find(params[:item_id])
+  end
+
+  def move_to_login
+    redirect_to new_user_session_path unless user_signed_in?
   end
 
 end
