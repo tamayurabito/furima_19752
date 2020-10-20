@@ -8,6 +8,7 @@ class Item < ApplicationRecord
   end
 
   belongs_to :user
+  has_one :purchace
   has_one_attached :image
   belongs_to_active_hash :item_category
   belongs_to_active_hash :item_status
