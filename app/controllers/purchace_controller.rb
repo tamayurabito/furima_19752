@@ -13,6 +13,12 @@ class PurchaceController < ApplicationController
       render 'index'
     end
   end
+  private
+  
+  def purchace_params
+    params.permit(:token,:postal_code, :delivery_area_id, :citys, :addresses, :building_name, :phone_number).merge(item_id: @item.id, user_id: current_user.id)
+  end
+
   def pay_item
     Payjp.api_key = ENV['PAYJP_SECRET_KEY']  # PAY.JPテスト秘密鍵
     Payjp::Charge.create(
