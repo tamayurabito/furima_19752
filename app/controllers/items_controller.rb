@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update]
   before_action :move_to_top_another_user, only: [:edit]
   before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :move_to_top_another_user, only: [:edit, :destroy]
 
   def index
     @items = Item.order('id DESC')
@@ -39,6 +40,8 @@ class ItemsController < ApplicationController
     @item.destroy
     redirect_to root_path
   end
+    
+
   private
 
   def item_params
