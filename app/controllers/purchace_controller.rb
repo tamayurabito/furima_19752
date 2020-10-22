@@ -5,6 +5,7 @@ class PurchaceController < ApplicationController
   before_action :move_to_top_already_purchased, only: [:index]
 
   def index
+    @purchace = PurchaceAddress.new
   end
 
   def create
