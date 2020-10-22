@@ -21,7 +21,7 @@ class PurchaceController < ApplicationController
   private
 
   def purchace_params
-    params.permit(:token, :postal_code, :delivery_area_id, :citys, :addresses, :building_name, :phone_number).merge(item_id: @item.id, user_id: current_user.id)
+    params.permit(:token, :postal_code, :delivery_area_id, :citys, :addresses, :building_name, :phone_number, :item_id).merge(user_id: current_user.id)
   end
 
   def pay_item
